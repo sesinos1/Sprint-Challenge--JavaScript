@@ -22,7 +22,7 @@
   //};
   
   volume(){
-    return `${this.length} * ${this.width} * ${this.height}`;
+    return `${this.length * this.width * this.height}`;
   }
   
   /* == Step 3: Surface Area Method ==
@@ -35,7 +35,7 @@
     //);
       //};
   surfaceArea(){
-    return `2 * ${this.length} * ${this.width} + ${this.length} * ${this.height} + ${this.width} * ${this.height}`;
+    return `${2 * (this.length * this.width + this.length * this.height + this.width * this.height)}`;
   }
   }
   /* == Step 4: Create a new object that uses CuboidMaker ==

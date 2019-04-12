@@ -37,7 +37,7 @@ function consume(a, b, cb) {
 
 // Explain in your own words why `nestedfunction()` can access the variable `internal`.
 
- //Lexical scope is the ability of the inner function to access the outer scope.
+ //1.Lexical scope is the ability of the inner function to access the outer scope.
 
 // Explanation: 
 
