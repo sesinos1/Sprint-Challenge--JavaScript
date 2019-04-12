@@ -7,28 +7,53 @@
 */
 
 // tyrannosaurus, carnivorous, 7000kg, 12m, Late Cretaceious
-
+let tyrannosaurus = {
+  "name": "tyrannosaurus",
+  "diet": "carnivorous",
+  "weight": "7000kg",
+  "length": "12m",
+  "period": "Late Cretaceious",
+}
 // stegosaurus, herbivorous, 2000kg, 9m, Late Jurassic
 
+let stegosaurus = {
+"name": "stegosaurus",
+"diet": "herbivorous",
+"weight": "2000kg",
+"length": "9m",
+"period": "Late Jurassic",
+}
+
 // velociraptor, carnivorous, 15kg, 1.8m, Late Cretaceious
+
+let velociraptor = {
+"name": "velociraptor",
+"diet": "carnivorous",
+"weight": "15kg",
+"length": "1.8m",
+"period": "Late Cretaceious",
+}
 
 // Using your dinosaur objects, log answers to these questions:
 
 // How much did tyrannosaurus weigh?
-console.log();
+console.log(velociraptor.weight);
 
 // What was the diet of a velociraptor?
-console.log();
+console.log(velociraptor.diet);
 
 // How long was a stegosaurus?
-console.log();
+console.log(stegosaurus.length);
 
 // What time period did tyrannosaurus live in?
-console.log();
+console.log(tyrannosaurus.period);
 
 
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-console.log();
+tyrannosaurus.speak = function() {
+return "RAWERSRARARWERSARARARRRR!";
+}
+console.log(tyrannosaurus.speak());
 
 
 // ==== Arrays ====
@@ -46,10 +71,20 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 {"id":9,"first_name":"Michail","university":"Universidad Católica de Ávila","email":"mrome8@shinystat.com"},
 {"id":10,"first_name":"Hube","university":"Universitat Rovira I Virgili Tarragona","email":"hlethbrig9@foxnews.com"}]
 
-/* Request 1: Create a new array called universities that contains all the univeristies in the graduates array.  
+/* Request 1: Create a new array called universities that contains all the univeristies in the graduates array.
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
-const universities = [];
+const universities = [{"university":"Missouri Southern State College"},
+{"university":"The School of the Art Institute of Chicago"},
+{"university":"Marian College"},
+{"university":"International Medical & Technological University"},
+{"university":"Sultan Salahuddin Abdul Aziz Shah Polytechnic"},
+{"university":"Fachhochschule Rosenheim, Hochschule für Technik und Wirtschaft"},
+{"university":"Salem University"},
+{"university":"Coastal Carolina University"},
+{"university":"Universidad Católica de Ávila"},
+{"university":"Universitat Rovira I Virgili Tarragona"}]
+
 console.log(universities)
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
@@ -58,12 +93,26 @@ The resulting contact information should have a space between the first name and
 Name email@example.com
 
 Log the result of your new array. */
-const contactInfo = [];
+const contactInfo = [{"first_name":"Cynde","email":"ctorry0@macromedia.com"},
+{"first_name":"Saundra","email":"swhal1@state.gov"},
+{"first_name":"Lambert","email":"lparham2@techcrunch.com"},
+{"first_name":"Modestine","email":"mdolder3@symantec.com"},
+{"first_name":"Chick","email":"camorts4@google.com.au"},
+{"first_name":"Jakob","email":"jharken5@spiegel.de"},
+{"first_name":"Robbi","email":"rbrister6@redcross.org"},
+{"first_name":"Colline","email":"cbrosh7@alibaba.com"},
+{"first_name":"Michail","email":"mrome8@shinystat.com"},
+{"first_name":"Hube","email":"hlethbrig9@foxnews.com"}];
 console.log(contactInfo);
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
-const uni = [];
+const uni = [
+{"university":"International Medical & Technological University"},
+{"university":"Salem University"},
+{"university":"Coastal Carolina University"},
+{"university":"Universidad Católica de Ávila"},
+{"university":"Universitat Rovira I Virgili Tarragona"}];
 console.log(uni);
 
 
@@ -89,6 +138,9 @@ The zoo wants to display both the scientific name and the animal name in front o
 
 */
 const animalNames = [];
+let conferenceNames = zooAnimals.forEach(function(i){
+animalNames.push(i.animal_name + ", " + i.scientific_name);
+});
 console.log(animalNames);
 
 /* Request 2: .map()    
@@ -97,7 +149,9 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 
 */
 
-const lowerCase = [];
+const lowerCase = zooAnimals.map((lan)=>{
+return lan.animal_name.toLowerCase();
+});
 console.log(lowerCase); 
 
 /* Request 3: .filter() 
@@ -105,7 +159,9 @@ console.log(lowerCase);
 The zoos are concenred about animals with a lower population count. Find out which animals have a population less than 5.
 
 */
-const largerPopulation = [];
+const largerPopulation = zooAnimals.filter((Lowpop) => {
+return Lowpop.population < 5;
+});
 console.log(largerPopulation);
 
 /* Request 4: .reduce() 
@@ -113,7 +169,10 @@ console.log(largerPopulation);
 The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
 
 */
-const populationTotal = 0;
+const populationTotal = 
+zooAnimals.reduce((popT, popA) =>{
+return popT + popA.population
+}, 0);
 console.log(populationTotal);
 
 
